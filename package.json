@@ -1,0 +1,65 @@
+{
+  "name": "pgmcp-typescript",
+  "version": "1.0.0",
+  "main": "dist/server/main.js",
+  "bin": {
+    "pgmcp": "./bin/pgmcp"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server/main.js",
+    "dev": "nodemon --exec ts-node src/server/main.ts",
+    "dev:client": "ts-node src/client/main.ts",
+    "build:cli": "npm run build && chmod +x bin/pgmcp",
+    "cli": "npm run build && node bin/pgmcp",
+    "ask": "npm run build && node bin/pgmcp ask",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "postgresql",
+    "sql",
+    "ai",
+    "natural-language",
+    "database",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "PostgreSQL Natural Language Query Tool using AI",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.5.2",
+    "@types/pg": "^8.15.5",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint": "^9.36.0",
+    "jest": "^30.1.3",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@google/genai": "^1.21.0",
+    "@google/generative-ai": "^0.24.1",
+    "@types/uuid": "^10.0.0",
+    "chalk": "^4.1.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "joi": "^18.0.1",
+    "pg": "^8.16.3",
+    "uuid": "^13.0.0",
+    "winston": "^3.17.0"
+  }
+}
